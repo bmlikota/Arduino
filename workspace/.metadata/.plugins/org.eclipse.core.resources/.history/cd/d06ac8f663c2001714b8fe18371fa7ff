@@ -976,7 +976,7 @@ int ESP8266::httpGet()
 }
 
 
-int ESP8266::httpGet2(String webserver, uint32_t port, char* request) {
+int ESP8266::httpGet2(String webserver, uint32_t port, String request) {
 
 	if (createTCP(webserver, port)) {
 		Serial.println(F("create tcp - OK"));

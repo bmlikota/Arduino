@@ -1,6 +1,6 @@
 Build\ before\ upload\ option=TRUE
 Clean\ Serial\ Monitor\ after\ upload=true
-FmStatus=2
+FmStatus=3
 Open\ serial\ connections\ with\ the\ monitor=true
 Serial\ Monitor\ Last\ Used\ auto\ scroll\ setting=true
 Serial\ monitor\ last\ selected\ Port=/dev/ttyUSB0

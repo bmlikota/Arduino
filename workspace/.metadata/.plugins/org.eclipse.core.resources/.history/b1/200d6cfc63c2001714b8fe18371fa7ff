@@ -406,7 +406,7 @@ class ESP8266 {
     bool sendSingle(const char* url);
 
     int httpGet();
-    int httpGet2(String webserver, uint32_t port, char* request);
+    int httpGet2(String webserver, uint32_t port, String request);
     
  private:
     /* 

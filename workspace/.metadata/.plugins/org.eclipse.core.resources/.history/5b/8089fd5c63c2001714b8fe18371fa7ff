@@ -976,24 +976,30 @@ int ESP8266::httpGet()
 }
 
 
-int ESP8266::httpGet2(String webserver, uint32_t port, char* request) {
+int ESP8266::httpGet2(String webserver, uint32_t port, char* request)
+{
 
-	if (createTCP(webserver, port)) {
-		Serial.println(F("create tcp - OK"));
-	} else {
-		Serial.println(F("create tcp - ERROR"));
-		return -1;
-	}
+  if (createTCP(webserver, port))
+  {
+    Serial.println(F("create tcp - OK"));
+  }
+  else
+  {
+    Serial.println(F("create tcp - ERROR"));
+    return "";
+  }
+  
+  if (!sendSingle(request))
+  {
+    Serial.print(F("not sent"));
+    //return "";
+  }
 
-	if (!sendSingle(request)) {
-		Serial.print(F("not sent"));
-		return -1;
-	}
+  int len = recvSingle(m_responseBuffer, MAX_BUFFER_SIZE);
+  Serial.println((char*)m_responseBuffer);
 
-	int len = recvSingle(m_responseBuffer, MAX_BUFFER_SIZE);
-	Serial.println((char*) m_responseBuffer);
 
-	return len;
+  return len;
 }
 
 
