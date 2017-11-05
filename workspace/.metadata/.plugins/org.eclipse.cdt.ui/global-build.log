@@ -2387,3 +2387,127 @@ Total                      82916
 
 Finished building target: ESP8266
  
+21:24:44 **** Incremental Build of configuration Release for project ESP8266 ****
+make all 
+Building file: ../.ino.cpp
+Starting C++ compile
+"/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10802 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR   -I"/home/bmlikota/Apps/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.20/cores/arduino" -I"/home/bmlikota/Apps/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.20/variants/standard" -I"/home/bmlikota/Apps/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.20/libraries/SoftwareSerial" -I"/home/bmlikota/Apps/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.20/libraries/SoftwareSerial/src" -MMD -MP -MF".ino.cpp.d" -MT".ino.cpp.o" -D__IN_ECLIPSE__=1 -x c++ "../.ino.cpp"  -o  ".ino.cpp.o"
+In file included from ../.ino.cpp:13:0:
+../Blink.ino: In function 'void loop()':
+../Blink.ino:60:19: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+  char* request =  "GET /bmlikota/index.xhtml HTTP/1.1\r\nHost: 192.168.1.7:9090\r\nConnection: close\r\n\r\n";
+                   ^
+Finished building: ../.ino.cpp
+ 
+Building file: ../ESP8266.cpp
+Starting C++ compile
+"/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10802 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR   -I"/home/bmlikota/Apps/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.20/cores/arduino" -I"/home/bmlikota/Apps/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.20/variants/standard" -I"/home/bmlikota/Apps/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.20/libraries/SoftwareSerial" -I"/home/bmlikota/Apps/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.20/libraries/SoftwareSerial/src" -MMD -MP -MF"ESP8266.cpp.d" -MT"ESP8266.cpp.o" -D__IN_ECLIPSE__=1 -x c++ "../ESP8266.cpp"  -o  "ESP8266.cpp.o"
+../ESP8266.cpp:45:49: warning: unused parameter 'baud' [-Wunused-parameter]
+ ESP8266::ESP8266(SoftwareSerial &uart, uint32_t baud): m_puart(&uart)
+                                                 ^
+../ESP8266.cpp: In member function 'bool ESP8266::autoSetBaud(uint32_t)':
+../ESP8266.cpp:70:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for (int i = 0; i < sizeof(baudRateArray) ; i++)        //check for current esp baudrate
+                       ^
+../ESP8266.cpp:60:8: warning: unused variable 'time0' [-Wunused-variable]
+   long time0 = millis();
+        ^
+../ESP8266.cpp: In member function 'uint32_t ESP8266::recvPkg(uint8_t*, uint32_t, uint32_t*, uint32_t, uint8_t*)':
+../ESP8266.cpp:524:15: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     ret = len > buffer_size ? buffer_size : len;
+               ^
+../ESP8266.cpp: In member function 'int ESP8266::recvSingle(uint8_t*, int)':
+../ESP8266.cpp:924:7: warning: unused variable 'bodyFlag' [-Wunused-variable]
+   int bodyFlag = 1;
+       ^
+../ESP8266.cpp: In member function 'int ESP8266::httpGet()':
+../ESP8266.cpp:953:20: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+   char* request =  "GET / HTTP/1.1\r\nHost: www.google.com\r\nConnection: close\r\n\r\n";
+                    ^
+../ESP8266.cpp:962:12: warning: invalid conversion from 'const char*' to 'int' [-fpermissive]
+     return "";
+            ^
+Finished building: ../ESP8266.cpp
+ 
+Starting combiner
+"/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-gcc" -Wall -Wextra -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p -o "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf"    ./.ino.cpp.o ./ESP8266.cpp.o  ./libraries/SoftwareSerial/src/SoftwareSerial.cpp.o   /home/bmlikota/Arduino/workspace/ESP8266/Release/arduino.ar    /home/bmlikota/Arduino/workspace/ESP8266/Release/arduino.ar  "-L/home/bmlikota/Arduino/workspace/ESP8266/Release" -lm
+Finished building: ESP8266.elf
+ 
+Do all objcopy commands
+"/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-objcopy" -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0  "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf" "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.eep"
+"/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-objcopy" -O ihex -R .eeprom  "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf" "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.hex"
+Finished building: ESP8266.hex
+ 
+Building target: ESP8266
+Printing size:
+"/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-size" -A "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf"
+/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf  :
+section                     size      addr
+.data                        656   8388864
+.text                      10166         0
+.bss                         577   8389520
+.comment                      17         0
+.note.gnu.avr.deviceinfo      64         0
+.debug_aranges               152         0
+.debug_info                33912         0
+.debug_abbrev               7631         0
+.debug_line                 7714         0
+.debug_frame                1940         0
+.debug_str                  5220         0
+.debug_loc                 13787         0
+.debug_ranges               1080         0
+Total                      82916
+
+
+Finished building target: ESP8266
+ 
+21:26:14 **** Incremental Build of configuration Release for project ESP8266 ****
+make all 
+Building target: ESP8266
+Printing size:
+"/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-size" -A "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf"
+/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf  :
+section                     size      addr
+.data                        656   8388864
+.text                      10166         0
+.bss                         577   8389520
+.comment                      17         0
+.note.gnu.avr.deviceinfo      64         0
+.debug_aranges               152         0
+.debug_info                33912         0
+.debug_abbrev               7631         0
+.debug_line                 7714         0
+.debug_frame                1940         0
+.debug_str                  5220         0
+.debug_loc                 13787         0
+.debug_ranges               1080         0
+Total                      82916
+
+
+Finished building target: ESP8266
+ 
+21:30:28 **** Incremental Build of configuration Release for project ESP8266 ****
+make all 
+Building target: ESP8266
+Printing size:
+"/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-size" -A "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf"
+/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf  :
+section                     size      addr
+.data                        656   8388864
+.text                      10166         0
+.bss                         577   8389520
+.comment                      17         0
+.note.gnu.avr.deviceinfo      64         0
+.debug_aranges               152         0
+.debug_info                33912         0
+.debug_abbrev               7631         0
+.debug_line                 7714         0
+.debug_frame                1940         0
+.debug_str                  5220         0
+.debug_loc                 13787         0
+.debug_ranges               1080         0
+Total                      82916
+
+
+Finished building target: ESP8266
+ 
