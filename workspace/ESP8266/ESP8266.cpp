@@ -995,16 +995,3 @@ int ESP8266::httpGet2(String webserver, uint32_t port, char* request) {
 
 	return len;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

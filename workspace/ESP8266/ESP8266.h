@@ -475,7 +475,7 @@ class ESP8266 {
     bool sATCIPSTO(uint32_t timeout);
 
 
-      uint8_t m_responseBuffer[MAX_BUFFER_SIZE] = {0};
+    uint8_t m_responseBuffer[MAX_BUFFER_SIZE] = {0};
 
     /*
      * +IPD,len:data
