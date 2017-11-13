@@ -1,7 +1,7 @@
 Automatically\ import\ libraries=true
-FbStatus=35
-FsStatus=3
-FuStatus=30
+FbStatus=48
+FsStatus=4
+FuStatus=42
 JANTJE.TEMPLATE_USE_DEFAULT=sample
 Last\ Used\ Upload\ port=/dev/ttyUSB0
 Last\ used\ Board=uno

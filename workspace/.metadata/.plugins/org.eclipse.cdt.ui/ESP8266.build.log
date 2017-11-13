@@ -1,28 +1,28 @@
-21:30:28 **** Incremental Build of configuration Release for project ESP8266 ****
+01:29:12 **** Incremental Build of configuration Release for project ESP8266 ****
 make all 
 Building target: ESP8266
 Printing size:
 "/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-size" -A "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf"
 /home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf  :
 section                     size      addr
-.data                        656   8388864
-.text                      10166         0
-.bss                         577   8389520
+.data                        650   8388864
+.text                      10178         0
+.bss                         577   8389514
 .comment                      17         0
 .note.gnu.avr.deviceinfo      64         0
 .debug_aranges               152         0
-.debug_info                33912         0
-.debug_abbrev               7631         0
-.debug_line                 7714         0
+.debug_info                33937         0
+.debug_abbrev               7644         0
+.debug_line                 7729         0
 .debug_frame                1940         0
-.debug_str                  5220         0
+.debug_str                  5237         0
 .debug_loc                 13787         0
 .debug_ranges               1080         0
-Total                      82916
+Total                      82992
 
 
 Finished building target: ESP8266
  
 
-21:30:28 Build Finished (took 83ms)
+01:29:13 Build Finished (took 89ms)
 

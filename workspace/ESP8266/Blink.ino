@@ -39,6 +39,7 @@ const char *SSID = "H1 Telekom ecad";
 const char *PASSWORD = "INNBOX2609000617";
 const String WEBSERVER = "192.168.1.7"; //"www.google.com"; //upisi adresu (lokal) racunala
 const uint32_t PORT = 9090; // 80; //upisi port na serveru
+bool flag = true;
 
 SoftwareSerial mySerial(10, 11); //SoftwareSerial pins for MEGA/Uno. For other boards see: https://www.arduino.cc/en/Reference/SoftwareSerial
 
@@ -51,15 +52,21 @@ void setup(void) {
 
 	if (!wifi.init(SSID, PASSWORD)) {
 		Serial.println("Wifi Init failed. Check configuration.");
-		while (true); // loop eternally
+		while (true)
+			; // loop eternally
 	}
 }
 
 void loop(void) {
 
-	char* request =  "GET /bmlikota/index.xhtml HTTP/1.1\r\nHost: 192.168.1.7:9090\r\nConnection: close\r\n\r\n";
-	wifi.httpGet2(WEBSERVER, PORT, request);
-	delay(4000);
-	Serial.println("Zavrsio delay!");
+	if (flag) {
+		flag = false;
+		char* request =
+				"GET /power/service/power/7 HTTP/1.1\r\nHost: 192.168.1.7:9090\r\nConnection: close\r\n\r\n";
+		wifi.httpGet2(WEBSERVER, PORT, request);
+		delay(4000);
+		Serial.println("U if-u!");
+	}
+
 }
 
