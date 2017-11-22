@@ -1,7 +1,7 @@
 Automatically\ import\ libraries=true
-FbStatus=54
+FbStatus=92
 FsStatus=5
-FuStatus=47
+FuStatus=85
 JANTJE.TEMPLATE_USE_DEFAULT=sample
 Last\ Used\ Upload\ port=/dev/ttyUSB1
 Last\ used\ Board=uno
@@ -10,6 +10,6 @@ Last\ used\ Examples=/home/bmlikota/Apps/eclipse/arduinoPlugin/examples/01.Basic
 Private\ Library\ Path=/home/bmlikota/Arduino/libraries
 Private\ hardware\ Path=/home/bmlikota/Arduino/hardware
 eclipse.preferences.version=1
-lFsStatus=101
+lFsStatus=151
 last\ Used\ upload\ Protocol=Default
 last\ used\ Board\ custom\ option\ selections=

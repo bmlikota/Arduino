@@ -1,3 +1,4 @@
+Board\ plotter\ filter\ on\ off=false
 Build\ before\ upload\ option=TRUE
 Clean\ Serial\ Monitor\ after\ upload=true
 FmStatus=5

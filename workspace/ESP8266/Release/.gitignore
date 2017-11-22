@@ -3,4 +3,15 @@
 /makefile
 /sources.mk
 /subdir.mk
-/workspace/
+
+*.o
+*.log
+*.pdom
+*.elf
+*.hex
+*.index
+*.prefs
+*.resources
+*.xmi
+*.ino.cpp
+
