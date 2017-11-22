@@ -975,7 +975,6 @@ int ESP8266::httpGet()
   return len;
 }
 
-
 int ESP8266::httpGet2(String webserver, uint32_t port, char* request) {
 
 	if (createTCP(webserver, port)) {

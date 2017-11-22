@@ -59,14 +59,14 @@ void setup(void) {
 
 void loop(void) {
 
-	if (flag) {
-		flag = false;
-		char* request =
-				"GET /power/service/power/7 HTTP/1.1\r\nHost: 192.168.1.7:9090\r\nConnection: close\r\n\r\n";
-		wifi.httpGet2(WEBSERVER, PORT, request);
-		delay(4000);
-		Serial.println("U if-u!");
-	}
+//	if (flag) {
+	flag = false;
+	char* request =
+			"GET /power/service/power/7 HTTP/1.1\r\nHost: 192.168.1.7:9090\r\nConnection: close\r\n\r\n";
+	wifi.httpGet2(WEBSERVER, PORT, request);
+	delay(4000);
+	Serial.println("U if-u!");
+//	}
 
 }
 

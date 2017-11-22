@@ -1,8 +1,8 @@
 Build\ before\ upload\ option=TRUE
 Clean\ Serial\ Monitor\ after\ upload=true
-FmStatus=4
+FmStatus=5
 Open\ serial\ connections\ with\ the\ monitor=true
 Serial\ Monitor\ Last\ Used\ auto\ scroll\ setting=true
-Serial\ monitor\ last\ selected\ Port=/dev/ttyUSB0
+Serial\ monitor\ last\ selected\ Port=/dev/ttyUSB1
 Serial\ monitor\ last\ selected\ rate=115200
 eclipse.preferences.version=1
