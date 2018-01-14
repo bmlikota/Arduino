@@ -1,4 +1,4 @@
-22:48:26 **** Incremental Build of configuration Release for project ESP8266 ****
+18:08:00 **** Incremental Build of configuration Release for project ESP8266 ****
 make all 
 Building file: ../.ino.cpp
 Starting C++ compile
@@ -6,7 +6,7 @@ Starting C++ compile
 In file included from ../.ino.cpp:13:0:
 ../Blink.ino: In function 'void loop()':
 ../Blink.ino:68:4: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
-    "GET /power/service/power/7 HTTP/1.1\r\nHost: 192.168.1.7:9090\r\nConnection: close\r\n\r\n";
+    "GET /power/service/power/7 HTTP/1.1\r\nHost: hidden-tor-12054.herokuapp.com\r\nConnection: close\r\n\r\n";
     ^
 Finished building: ../.ino.cpp
  
@@ -24,24 +24,24 @@ Printing size:
 "/home/bmlikota/Apps/eclipse//arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-size" -A "/home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf"
 /home/bmlikota/Arduino/workspace/ESP8266/Release/ESP8266.elf  :
 section                     size      addr
-.data                        642   8388864
+.data                        658   8388864
 .text                      10332         0
-.bss                         581   8389506
+.bss                         581   8389522
 .comment                      17         0
 .note.gnu.avr.deviceinfo      64         0
 .debug_aranges               120         0
-.debug_info                33424         0
+.debug_info                33432         0
 .debug_abbrev               6731         0
 .debug_line                 7273         0
 .debug_frame                1920         0
 .debug_str                  5111         0
 .debug_loc                 14322         0
 .debug_ranges               1120         0
-Total                      81657
+Total                      81681
 
 
 Finished building target: ESP8266
  
 
-22:48:27 Build Finished (took 739ms)
+18:08:00 Build Finished (took 766ms)
 

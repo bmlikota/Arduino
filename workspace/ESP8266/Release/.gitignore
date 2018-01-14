@@ -4,14 +4,12 @@
 /sources.mk
 /subdir.mk
 
-*.o
-*.log
-*.pdom
-*.elf
-*.hex
-*.index
-*.prefs
-*.resources
-*.xmi
+.gitignore
 *.ino.cpp
-
+*.ino.cpp.o
+*.pdom
+*.log
+.log
+.markers
+arduino.ar
+dailog_settings.xml

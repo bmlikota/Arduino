@@ -37,15 +37,20 @@
 
 const char *SSID = "H1 Telekom ecad";
 const char *PASSWORD = "INNBOX2609000617";
-const String WEBSERVER = "192.168.1.7"; //"www.google.com"; //upisi adresu (lokal) racunala
-const uint32_t PORT = 9090; // 80; //upisi port na serveru
-bool flag = true;
+const String WEBSERVER = "54.204.12.128"; //"192.168.1.7"; //"www.google.com"; //upisi adresu (lokal) racunala
+const uint32_t PORT = 80; //9090; // 80; //upisi port na serveru
+int pinCrvena = 0;
+int pinZuta;
 
 SoftwareSerial mySerial(10, 11); //SoftwareSerial pins for MEGA/Uno. For other boards see: https://www.arduino.cc/en/Reference/SoftwareSerial
 
 ESP8266 wifi(mySerial);
 
 void setup(void) {
+	digitalWrite(12, HIGH);
+
+	digitalWrite(13, HIGH);
+
 	//Start Serial Monitor at any BaudRate
 	Serial.begin(115200);
 	Serial.println("Begin");
@@ -59,14 +64,32 @@ void setup(void) {
 
 void loop(void) {
 
-//	if (flag) {
-	flag = false;
 	char* request =
-			"GET /power/service/power/7 HTTP/1.1\r\nHost: 192.168.1.7:9090\r\nConnection: close\r\n\r\n";
-	wifi.httpGet2(WEBSERVER, PORT, request);
+			"GET /power/service/power/7 HTTP/1.1\r\nHost: hidden-tor-12054.herokuapp.com\r\nConnection: close\r\n\r\n";
+			//"GET /power/service/power/7 HTTP/1.1\r\nHost: 192.168.1.7:9090\r\nConnection: close\r\n\r\n";
+
+	char* response = wifi.httpGet3(WEBSERVER, PORT, request);
 	delay(4000);
-	Serial.println("U if-u!");
-//	}
+	int crvena = wifi.getCrvena(response);
+	int zuta = wifi.getZuta(response);
+
+	if (crvena != pinCrvena) {
+		pinCrvena = crvena;
+		if (crvena == 0) {
+			digitalWrite(12, LOW);
+		} else {
+			digitalWrite(12, HIGH);
+		}
+	}
+
+	if (zuta != pinZuta) {
+		pinZuta = zuta;
+		if (zuta == 0) {
+			digitalWrite(13, LOW);
+		} else {
+			digitalWrite(13, HIGH);
+		}
+	}
 
 }
 
