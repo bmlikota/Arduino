@@ -407,6 +407,10 @@ class ESP8266 {
 
     int httpGet();
     int httpGet2(String webserver, uint32_t port, char* request);
+    char* httpGet3(String webserver, uint32_t port, char* request);
+
+    int getCrvena(char* response);
+    int getZuta(char* response);
     
  private:
     /* 

@@ -4,14 +4,9 @@
 /sources.mk
 /subdir.mk
 
-*.o
-*.log
-*.pdom
+*.ar
+*.cpp.o
 *.elf
-*.hex
+*.cpp
 *.index
-*.prefs
-*.resources
 *.xmi
-*.ino.cpp
-
