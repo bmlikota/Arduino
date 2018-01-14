@@ -1,9 +1,9 @@
 Automatically\ import\ libraries=true
-FbStatus=123
+FbStatus=125
 FsStatus=8
-FuStatus=113
+FuStatus=115
 JANTJE.TEMPLATE_USE_DEFAULT=sample
-Last\ Used\ Upload\ port=/dev/ttyUSB0
+Last\ Used\ Upload\ port=/dev/ttyUSB1
 Last\ used\ Board=uno
 Last\ used\ Boards\ file=/home/bmlikota/Apps/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.20/boards.txt
 Last\ used\ Examples=/home/bmlikota/Apps/eclipse/arduinoPlugin/examples/01.Basics/Blink

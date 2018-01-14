@@ -1,12 +1,2 @@
-/core/
-/libraries/
-/makefile
-/sources.mk
-/subdir.mk
-
-*.ar
-*.cpp.o
-*.elf
 *.cpp
-*.index
-*.xmi
+*.cpp.o
