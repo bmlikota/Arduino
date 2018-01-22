@@ -1,2 +1,7 @@
-*.cpp
-*.cpp.o
+/core/
+/libraries/
+/makefile
+/sources.mk
+/subdir.mk
+
+*.ino.cpp.o
