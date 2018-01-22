@@ -35,10 +35,10 @@
  */
 #include "ESP8266.h"
 
-const char *SSID = "P8_Mini"; // "P8_Mini"; // "H1 Telekom ecad"
-const char *PASSWORD = "11111111"; // "11111111"; // "INNBOX2609000617"
-const String WEBSERVER = "54.204.12.128"; // "192.168.1.7";  //"www.google.com"; //upisi adresu (lokal) racunala
-const uint32_t PORT = 80;//9090; // 80; //upisi port na serveru
+const char *SSID = "H1 Telekom ecad"; // "P8_Mini"; // "H1 Telekom ecad"
+const char *PASSWORD = "INNBOX2609000617"; // "11111111"; // "INNBOX2609000617"
+const String WEBSERVER = "192.168.1.7"; //"54.204.12.128"; // "192.168.1.7";  //"www.google.com"; //upisi adresu (lokal) racunala
+const uint32_t PORT = 9090;//9090; // 80; //upisi port na serveru
 int pinCrvena = 0;
 int pinZuta;
 
@@ -65,7 +65,13 @@ void setup(void) {
 void loop(void) {
 
 	char* request =// "GET /power/service/power/7 HTTP/1.1\r\nHost: 192.168.1.7:9090\r\nConnection: close\r\n\r\n";
-			"GET /power/service/power/7 HTTP/1.1\r\nHost: hidden-tor-12054.herokuapp.com\r\nConnection: close\r\n\r\n";
+			"POST /power/service/power/post HTTP/1.1\r\n"
+			"Host: hidden-tor-12054.herokuapp.com\r\n"
+			"Connection: close\r\n"
+			"Content-Type: application/json\r\n"
+			"Content-Length: 30"
+			"\r\n\r\n"
+			"{\"param1\": \"4\", \"param2\": \"5\"}";
 
 	char* response = wifi.httpGet3(WEBSERVER, PORT, request);
 	delay(4000);
