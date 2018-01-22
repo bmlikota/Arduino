@@ -35,17 +35,10 @@
  */
 #include "ESP8266.h"
 
-<<<<<<< HEAD
 const char *SSID = "H1 Telekom ecad"; // "P8_Mini"; // "H1 Telekom ecad"
 const char *PASSWORD = "INNBOX2609000617"; // "11111111"; // "INNBOX2609000617"
 const String WEBSERVER = "192.168.1.7"; //"54.204.12.128"; // "192.168.1.7";  //"www.google.com"; //upisi adresu (lokal) racunala
 const uint32_t PORT = 9090;//9090; // 80; //upisi port na serveru
-=======
-const char *SSID = "H1 Telekom ecad";
-const char *PASSWORD = "INNBOX2609000617";
-const String WEBSERVER = "54.204.12.128"; //"192.168.1.7"; //"www.google.com"; //upisi adresu (lokal) racunala
-const uint32_t PORT = 80; //9090; // 80; //upisi port na serveru
->>>>>>> branch 'master' of https://github.com/bmlikota/Arduino.git
 int pinCrvena = 0;
 int pinZuta;
 
