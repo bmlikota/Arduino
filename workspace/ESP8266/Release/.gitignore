@@ -4,4 +4,13 @@
 /sources.mk
 /subdir.mk
 
+
+.gitignore
+*.ino.cpp
 *.ino.cpp.o
+*.pdom
+*.log
+.log
+.markers
+arduino.ar
+dailog_settings.xml
